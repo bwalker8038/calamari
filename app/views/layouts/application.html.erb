@@ -7,8 +7,23 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-
-<%= yield %>
-
+  <header>
+    <h1><%= link_to "Calamari", root_path %></h1>
+  </header>
+  <nav id="main">
+    <ul>
+    <% if logged_in? %>
+       <li><%= link_to "New Recipe", new_recipe_path %></li>
+       <li><%= link_to "Edit Acount", edit_user_path(current_user) %></li>
+       <li><%= link_to "Logout", logout_path %></li>
+    <% else %>
+      <li><%= link_to "Login", login_path %></li>
+    </ul>
+    <% end %>
+  </nav>
+    <%= yield %>
+  <footer>
+    <p>A George Romero Production</p>
+  </footer>
 </body>
 </html>

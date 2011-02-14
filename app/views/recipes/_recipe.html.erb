@@ -1,0 +1,13 @@
+<%= div_for recipe do %>
+  <h3>
+    <%= link_to recipe.title, recipe %>
+    <% if recipe.owned_by? current_user %>
+      <span class='actions'>
+        <%= link_to "Edit", edit_recipe_path(article) %>
+        <%= link_to "Delete", recipe, :confirm => "Are you sure?",
+:method => :delete %>
+      </span>
+    <% end %>
+  </h3>
+<% end %>
+

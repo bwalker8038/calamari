@@ -1,20 +1,4 @@
 <h1>Listing recipes</h1>
 
 
-
-<% @recipes.each do |recipe| %>
-<article>
-  <h3><%= recipe.title %></h3>
-  <%= recipe.image %>
-  <nav>
-    <ul>
-      <li><%= link_to 'Show', recipe %></li>
-      <li><%= link_to 'Edit', edit_recipe_path(recipe) %></li>
-      <li><%= link_to 'Destroy', recipe, :confirm => 'Are you sure?', :method => :delete %></li>
-   </ul>
-<% end %>
-</article>
-
-<br />
-
-<%= link_to 'New Recipe', new_recipe_path %>
+<%= render @recipes %>

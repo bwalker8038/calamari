@@ -8,5 +8,9 @@ class Recipe < ActiveRecord::Base
   has_and_belongs_to_many :categories
   
   scope :where_title, lambda { |term| where("articles.title LIKE ?", "%#{term}%") }
-    
+  
+  def owned_by?(owner)
+    return false unless owner.is_a? User
+    user == owner
+  end    
 end

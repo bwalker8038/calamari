@@ -5,8 +5,8 @@ body, p, ol, ul, td {
   font-size:   13px;
   line-height: 18px;
 }
-
-header {float:left; margin: 0 50px 0 50px;}
+h1 { font-size: 24px; }
+header {float:left; margin: 0 50px 50px  50px; width:800px;}
 
 header h1 { 
   text-indent: -5000px; 
@@ -24,12 +24,13 @@ footer  {
   background-color:#777;
 }
 
-#main {float:right; margin-right:50px;}
+#main {float:left; margin-right:50px; margin-bottom:30px;}
 #main ul { display:inline;}
 #main li { display:inline; list-style:none;}
 #main a { text-decoration:none;}
 #main a:hover { color:#5599ff; }
 
+.recipe { margin: 10px 50px 10px 50px; }
 pre {
   background-color: #eee;
   padding: 10px;

@@ -19,6 +19,7 @@
     <%= f.label :ingredients %><br />
     <%= f.text_area :ingredients %>
   </div>
+  
   <div class="field">
     <%= f.label :disc %><br />
     <%= f.text_area :disc %>
@@ -26,6 +27,14 @@
   <div class="field">
     <%= f.label :image %><br />
     <%= f.text_field :image %>
+  </div>
+  <div class="field">
+    <%= f.label "Categories" %><br />
+    <% for category in Category.all %>
+      <%= check_box_tag 'recipe[category_ids][]', category.id,
+@recipe.category_ids.include?(category.id), :id => dom_id(category) %>
+      <%= label_tag dom_id(category), category.name, :class => "check_box_label" %>
+    <% end %>
   </div>
   <div class="actions">
     <%= f.submit %>

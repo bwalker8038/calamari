@@ -1,28 +1,19 @@
 <h1>Listing recipes</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Ingredients</th>
-    <th>Disc</th>
-    <th>Image</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+
 
 <% @recipes.each do |recipe| %>
-  <tr>
-    <td><%= recipe.title %></td>
-    <td><%= recipe.ingredients %></td>
-    <td><%= recipe.disc %></td>
-    <td><%= recipe.image %></td>
-    <td><%= link_to 'Show', recipe %></td>
-    <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-    <td><%= link_to 'Destroy', recipe, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<article>
+  <h3><%= recipe.title %></h3>
+  <%= recipe.image %>
+  <nav>
+    <ul>
+      <li><%= link_to 'Show', recipe %></li>
+      <li><%= link_to 'Edit', edit_recipe_path(recipe) %></li>
+      <li><%= link_to 'Destroy', recipe, :confirm => 'Are you sure?', :method => :delete %></li>
+   </ul>
 <% end %>
-</table>
+</article>
 
 <br />
 
